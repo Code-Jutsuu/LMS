@@ -12,10 +12,6 @@ const app = express();
 
 // connect to database
 await connectDB();
-
-//middleware
-app.use(cors());
-app.use(express.json());
  
 //Routes
 app.get('/', (req, res) => {
@@ -23,6 +19,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/clerk', express.json(), clerkWebhook);
+
+//middleware
+app.use(cors());
+app.use(express.json());
 
 //Port
 const PORT = process.env.PORT || 5000;
