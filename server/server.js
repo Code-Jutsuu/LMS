@@ -22,9 +22,8 @@ const allowedOrigins = [
   "https://lms-frontend-5bvkkkliz-himanshu-vermas-projects-951fc837.vercel.app"
 ];
 
-// Allow requests from localhost:5173
 app.use(cors({
-  origin: 'https://lms-backend-mu-sand.vercel.app/',
+  origin: allowedOrigins,
   credentials: true
 }));
 
