@@ -17,11 +17,22 @@ const app = express()
 await connectDB()
 await connectCloudinary()
 
+const allowedOrigins = [
+  "https://lms-frontend-three-phi.vercel.app",
+  "https://lms-frontend-5bvkkkliz-himanshu-vermas-projects-951fc837.vercel.app"
+];
+
 app.use(cors({
-  origin: "https://lms-frontend-three-phi.vercel.app", // your frontend URL
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
-}))
+}));
 
 //Middlewares
 app.use(cors())
