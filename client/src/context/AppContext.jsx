@@ -3,7 +3,7 @@ import { dummyCourses } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import humanizeDuration from "humanize-duration";
 import { useAuth, useUser } from "@clerk/clerk-react";
-import axios from 'axios';
+import axios from 'axios'
 import { toast } from "react-toastify";
 
 
