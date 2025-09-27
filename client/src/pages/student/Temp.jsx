@@ -17,7 +17,7 @@ function CourseDetails() {
   const [playerData, setPlayerData] = useState(null);
 
   const {
-    // allCourses,
+    allCourses,
     calculateRating,
     calculateChapterTime,
     calculateCourseDuration,
